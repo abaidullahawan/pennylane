@@ -1,0 +1,43 @@
+<div class="col-lg-12 mt-5 card-form__body">
+  <div class="table-responsive pl-2 pr-2">
+    <table class="table mb-0 thead-border-top-0 mt-1  table-hover">
+      <thead class="table-info">
+        <tr>
+          <th>Title </th>
+          <th>Cook Time </th>
+          <th>Prep Time </th>
+          <th>Ratings </th>
+          <th>Category </th>
+          <th>Author </th>
+          <th colspan="1">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipes.each do |recipe| %>
+          <tr class="redirect_to_show cursor-pointer">
+            <td><%= recipe.title %></td>
+            <td><%= recipe.cook_time %></td>
+            <td><%= recipe.prep_time %></td>
+            <td><%= recipe.ratings %></td>
+            <td><%= recipe.category %></td>
+            <td><%= recipe.author %></td>
+            <td>
+
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="mb-5">
+    <div class="flickr_pagination">
+      <div class="page_info" >
+        <%= page_entries_info @recipes %>
+      </div >
+      <div style="margin-left: 25%">
+        <%= will_paginate @recipes %>
+      </div>
+    </div>
+  </div>
+</div>
+
