@@ -1,29 +1,29 @@
-<div class="col-lg-12 mt-5 card-form__body">
+<div class="container mt-5">
   <div class="table-responsive pl-2 pr-2">
-    <table class="table mb-0 thead-border-top-0 mt-1  table-hover">
-      <thead class="table-info">
-        <tr>
-          <th>Name </th>
-          <th>Recipe </th>
-          <th>Category </th>
-          <th>Author </th>
-          <th colspan="1">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @ingredients.each do |ingredient| %>
-          <tr class="redirect_to_show cursor-pointer">
-            <td><%= ingredient.name %></td>
-            <td><%= ingredient.recipe.title %></td>
-            <td><%= ingredient.recipe.category %></td>
-            <td><%= ingredient.recipe.author %></td>
-            <td>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+    <div class="input-group">
+      <%= form_tag(search_recipe_path, :method => "get", id: "search-form") do %>
+        <div class="position-relative">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Recipe", class: 'form-control' %>
+          <%= image_tag "search.svg", class: "search-icon-field" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+        <div class="col-3 mt-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=<%= ingredient.recipe.image_url%> alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text"><%= ingredient.name%></h5>
+              <h6 class="card-title"><%= ingredient.recipe.title%></h6>
+              <p class="card-text"><%= ingredient.recipe.category%></p>
+              <p class="card-text">By: <%= ingredient.recipe.author%></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
   <div class="mb-5">
     <div class="flickr_pagination">
       <div class="page_info" >
