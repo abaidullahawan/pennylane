@@ -17,4 +17,5 @@ development:
 
   production:
     <<: *default
-    database: db/production.pennylane
+    database: postgresql-curly-62291
+    host: "44.198.29.193"

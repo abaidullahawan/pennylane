@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'will_paginate/array'
+
 class RecipesController < ApplicationController
   def search_recipe
     ingredient_search = search_params['search']&.gsub(',', ' ')&.split(' ')
