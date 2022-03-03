@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="table-responsive pl-2 pr-2">
+    <div class="input-group">
+      <%= form_tag(search_recipe_path, :method => "get", id: "search-form") do %>
+        <div class="position-relative">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Recipe", class: 'form-control' %>
+          <%= image_tag "search.svg", class: "search-icon-field" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+        <div class="col-3 mt-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=<%= ingredient.recipe.image_url%> alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text"><%= ingredient.name%></h5>
+              <h6 class="card-title"><%= ingredient.recipe.title%></h6>
+              <p class="card-text"><%= ingredient.recipe.category%></p>
+              <p class="card-text">By: <%= ingredient.recipe.author%></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <div class="mb-5">
+    <div class="flickr_pagination">
+      <div class="page_info" >
+        <%= page_entries_info @ingredients %>
+      </div >
+      <div style="margin-left: 25%">
+        <%= will_paginate @ingredients %>
+      </div>
+    </div>
+  </div>
+</div>
