@@ -32,7 +32,8 @@ gem 'activerecord-import'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # elasticsearch
 gem 'elasticsearch-model'
-
+# ransack
+gem 'ransack', '~>  2.5.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
