@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool:  15
   host: localhost
-  username: 'postgres'
-  password: 'postgres'
+  username: 'qyhhhfzumnmcxq'
+  password: '01b858bb0d6f92a889a2407b59d5b5c203d661fafbcd0f7d7c8f79610326074d'
   port: 5432
 
 development:
@@ -18,4 +18,4 @@ development:
   production:
     <<: *default
     database: delj9t91a53fjv
-    host: "52.70.186.184"
+    host: "ec2-52-70-186-184.compute-1.amazonaws.com"
