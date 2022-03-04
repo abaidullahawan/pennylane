@@ -12,12 +12,12 @@
       <% @ingredients.each do |ingredient| %>
         <div class="col-3 mt-3">
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=<%= ingredient.recipe.image_url%> alt="Card image cap">
+            <%= link_to image_tag(ingredient.recipe.image_url, class: "card-img-top", alt: "Card image cap") , show_ingredient_path(ingredient) %>
             <div class="card-body">
-              <h5 class="card-text"><%= ingredient.name%></h5>
-              <h6 class="card-title"><%= ingredient.recipe.title%></h6>
-              <p class="card-text"><%= ingredient.recipe.category%></p>
-              <p class="card-text">By: <%= ingredient.recipe.author%></p>
+              <h5 class="card-text"><%= ingredient.name %></h5>
+              <h6 class="card-title"><%= ingredient.recipe.title %></h6>
+              <p class="card-text"><%= ingredient.recipe.category %></p>
+              <p class="card-text">By: <%= ingredient.recipe.author %></p>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
   <div class="mb-5">
     <div class="flickr_pagination">
       <div class="page_info" >
-        <%#= page_entries_info @ingredients %>
+        <%#== page_entries_info @pagy %>
       </div >
       <div style="margin-left: 25%">
         <%== pagy_nav(@pagy) %>
