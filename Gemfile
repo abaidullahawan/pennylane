@@ -28,14 +28,14 @@ gem 'pg'
 gem 'bootstrap-sass'
 # bulk record creation
 gem 'activerecord-import'
-# pagination
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # elasticsearch
 gem 'elasticsearch-model'
 # ransack
 gem 'ransack', '~>  2.5.0'
 # Use Active Storage variant
 gem 'pg_search', '~> 2.3', '>= 2.3.2'
+
+gem 'pagy', '~>3.11.0'
 
 # gem 'image_processing', '~> 1.2'
 

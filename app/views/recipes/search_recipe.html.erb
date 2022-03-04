@@ -27,10 +27,10 @@
   <div class="mb-5">
     <div class="flickr_pagination">
       <div class="page_info" >
-        <%= page_entries_info @ingredients %>
+        <%#= page_entries_info @ingredients %>
       </div >
       <div style="margin-left: 25%">
-        <%= will_paginate @ingredients %>
+        <%== pagy_nav(@pagy) %>
       </div>
     </div>
   </div>
