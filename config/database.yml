@@ -17,5 +17,5 @@ development:
 
   production:
     <<: *default
-    database: postgresql-curly-62291
-    host: "44.198.29.193"
+    database: delj9t91a53fjv
+    host: "52.70.186.184"

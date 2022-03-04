@@ -35,6 +35,8 @@ gem 'elasticsearch-model'
 # ransack
 gem 'ransack', '~>  2.5.0'
 # Use Active Storage variant
+gem 'pg_search', '~> 2.3', '>= 2.3.2'
+
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
