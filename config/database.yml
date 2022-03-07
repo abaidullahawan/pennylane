@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool:  15
+  host: localhost
+  username: 'qyhhhfzumnmcxq'
+  password: '01b858bb0d6f92a889a2407b59d5b5c203d661fafbcd0f7d7c8f79610326074d'
+  port: 5432
+
+development:
+  <<: *default
+  database: pennylane
+
+  # test:
+  # <<: *default
+  # database: db/test.pennylane
+
+  production:
+    <<: *default
+    database: delj9t91a53fjv
+    host: "ec2-52-70-186-184.compute-1.amazonaws.com"

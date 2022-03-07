@@ -1,0 +1,36 @@
+<div class='m-5 pl-4 pr-4'>
+  <div class= 'row '>
+    <div class='col-lg-5'>
+      <div class='card card-form__body'>
+        <div class = 'table-responsive'>
+          <table class='table mb-0 thead-border-top-0 mt-1 table-hover table-bordered'>
+            <tbody>
+              <tr>
+                <td><strong>Recipe Title</strong></td>
+                <td><%= @recipe.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Ingredient List</strong></td>
+                <td></td>
+              </tr>
+                <%@recipe.ingredients.pluck(:name).each do |name| %>
+                <tr>
+                  <td><strong></strong></td>
+                  <td><%=name%></td>
+                </tr>
+                <%end%>
+              <tr>
+                <td><strong>Category </td>
+                <td> <%=@recipe.category%> </td>
+              </tr>
+              <tr>
+                <td><strong> Author </strong></td>
+                <td> <%=@recipe.author %></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
