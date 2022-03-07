@@ -16,7 +16,8 @@ This application uses multiple gems to make the searches of system faster and di
 recipes from available ingredients. Here is the list of gems that are used in this application. 
 1) pg_search
 2) pagy
-1). pg_search is use for advance search technique and it is used for filtering results. This app use 
+
+pg_search is use for advance search technique and it is used for filtering results. This app use 
 search_scope to search within a single model, but with greater flexibility. To make search faster, i 
 add column of "searchable" in ingredients table and store and ranked data from best match to worst.
 By ranking, it handles not only searching, but also putting the results in the correct order so the 
