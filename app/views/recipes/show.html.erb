@@ -6,20 +6,26 @@
           <table class='table mb-0 thead-border-top-0 mt-1 table-hover table-bordered'>
             <tbody>
               <tr>
-                <td><strong>Ingredient Name</strong></td>
-                <td><%= @ingredient.name %></td>
+                <td><strong>Recipe Title</strong></td>
+                <td><%= @recipe.title %></td>
               </tr>
               <tr>
-                <td><strong>Recipe Title</strong></td>
-                <td><%= @ingredient.recipe.title %></td>
+                <td><strong>Ingredient List</strong></td>
+                <td></td>
               </tr>
+                <%@recipe.ingredients.pluck(:name).each do |name| %>
+                <tr>
+                  <td><strong></strong></td>
+                  <td><%=name%></td>
+                </tr>
+                <%end%>
               <tr>
                 <td><strong>Category </td>
-                <td> <%=@ingredient.recipe.category%> </td>
+                <td> <%=@recipe.category%> </td>
               </tr>
               <tr>
                 <td><strong> Author </strong></td>
-                <td> <%=@ingredient.recipe.author %></td>
+                <td> <%=@recipe.author %></td>
               </tr>
             </tbody>
           </table>

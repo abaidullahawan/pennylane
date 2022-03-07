@@ -2,14 +2,6 @@
 
 class Ingredient < ApplicationRecord
   include PgSearch::Model
-  pg_search_scope :search_ingredient,
-                  associated_against: { recipe: [:title, :category] },
-                  against: { name: 'A' },
-                    using: {
-                      tsearch: {
-                        dictionary: 'english', tsvector_column: 'searchable'
-                      }
-                    }
-
+  pg_search_scope :search_ingredient, against: :name, associated_against: { recipe: [:title, :category] }
   belongs_to :recipe
 end
