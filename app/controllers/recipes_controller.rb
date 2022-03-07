@@ -4,8 +4,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show]
 
   def index
-    @q = search_params['search'].blank? ? Recipe.all :
-      Recipe.search_recipe_ingredient(search_params['search'])
+    if search_params['search'].blank?
+      @q = Recipe.all
+    else
+      @q = Recipe.search_recipe_ingredient(search_params['search'])
+    end
     @pagy, @recipes = pagy(@q, items: 30)
   end
 

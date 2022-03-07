@@ -8,6 +8,6 @@ class Recipe < ActiveRecord::Base
   associated_against: { ingredients: [:name] },
   against: :title,
   using: {
-    tsearch: { dictionary: 'english', any_word: true }
+    tsearch: { dictionary: :english, any_word: true }
   }
 end
