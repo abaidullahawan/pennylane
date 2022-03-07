@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     # @q = ingredient_search.blank? ? Ingredient.ransack(params[:q]) :
     #   Ingredient.search_ingredient(search_params['search']).ransack(params[:q])
     # @pagy, @ingredients = pagy(@q.result.includes(:recipe), items: 12)
-    @q = Recipe.search_recipe_ingredient(search_params['search'])
+    search_params['search'].blank? ?  @q = Recipe.all : @q = Recipe.search_recipe_ingredient(search_params['search'])
     @pagy, @recipes = pagy(@q, items: 30)
     # @recipes  = @q.result.page(params[:page])
   end
