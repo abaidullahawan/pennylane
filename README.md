@@ -30,13 +30,13 @@ Deployment instructions
 Deployed on Heroku. https://pennylane-recipe.herokuapp.com
 
 
-SQL
+# SQL
 SELECT COUNT(*) FROM "recipes" INNER JOIN (SELECT "recipes"."id" AS pg_search_id, (ts_rank((to_tsvector('english', coalesce("recipes"."title"::text, '')) || to_tsvector('english', coalesce(pg_search_7ca4e377ff4ca15213f780.pg_search_f88524159d982731f7e7ef::text, ''))), (''), 0)) AS rank FROM "recipes" LEFT OUTER JOIN (SELECT "recipes"."id" AS id, string_agg("ingredients"."name"::text, ' ') AS pg_search_f88524159d982731f7e7ef FROM "recipes" INNER JOIN "ingredients" ON "ingredients"."recipe_id" = "recipes"."id" GROUP BY "recipes"."id") pg_search_7ca4e377ff4ca15213f780 ON pg_search_7ca4e377ff4ca15213f780.id = "recipes"."id" WHERE ((to_tsvector('english', coalesce("recipes"."title"::text, '')) || to_tsvector('english', coalesce(pg_search_7ca4e377ff4ca15213f780.pg_search_f88524159d982731f7e7ef::text, ''))) @@ (''))) AS pg_search_63b8bd59a482879ad0634d ON "recipes"."id" = pg_search_63b8bd59a482879ad0634d.pg_search_id
 
 
 
 
-* Brakeman 
+# Brakeman 
 
 == Brakeman Report ==
 
@@ -57,7 +57,7 @@ Security Warnings: 0
 
 == Warning Types ==
 
-* Rubocop
+# Rubocop
 Inspecting 16 files
 ................
 
